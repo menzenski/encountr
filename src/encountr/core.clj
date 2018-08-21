@@ -1,6 +1,10 @@
-(ns encountr.core)
+(ns encountr.core
+  (:require [clojure.tools.cli :as cli]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(def cli-options
+  [["-h" "--help"]])
+
+(defn- main
+  [& args]
+  (cli/parse-opts args cli-options))
+
