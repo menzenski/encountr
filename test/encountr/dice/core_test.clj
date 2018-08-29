@@ -7,6 +7,15 @@
 
 (def number-of-trials 10000)
 
+(defspec roll-is-in-range
+         number-of-trials
+         (prop/for-all [number-of-dice gen/s-pos-int number-of-faces gen/s-pos-int]
+                       (let [dice-notation (format "%sd%s" number-of-dice number-of-faces)
+                             rolled (dice/roll dice-notation)
+                             min number-of-dice
+                             max (* number-of-dice number-of-faces)]
+                         (<= min rolled max))))
+
 (defspec parse-dice-notation-into-dice-and-faces
          number-of-trials
          (prop/for-all [number-of-dice gen/pos-int number-of-faces gen/pos-int]
