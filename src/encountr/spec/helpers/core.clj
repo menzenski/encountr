@@ -1,5 +1,6 @@
 (ns encountr.spec.helpers.core
-  (:require [clojure.spec.alpha :as s]))
+  (:require [clojure.spec.alpha :as s]
+            [cemerick.url :as url]))
 
 (s/def ::dice-notation (s/and string? #(re-matches #"^\d+d\d+$" %)))
 
@@ -14,3 +15,7 @@
 
 (s/def ::hit-dice ::dice-notation)
 
+(s/def ::url (s/and string?
+                    #(try
+                       (do (url/url %) true)
+                       (catch Throwable _ false))))

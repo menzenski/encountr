@@ -19,7 +19,9 @@
 
 (s/def ::hit_dice ::helpers/hit-dice)
 
-(s/def ::combatant (s/keys :req-un [::_id ::index ::name ::size ::alignment ::armor_class ::hit_points ::hit_dice]))
+(s/def ::url ::helpers/url)
+
+(s/def ::combatant (s/keys :req-un [::_id ::index ::name ::size ::alignment ::armor_class ::hit_points ::hit_dice ::url]))
 
 (defn conform
   [data]
