@@ -19,9 +19,11 @@
 
 (s/def ::hit_dice ::helpers-spec/hit-dice)
 
+(s/def ::initiative int?)
+
 (s/def ::url ::helpers-spec/url)
 
-(s/def ::combatant (s/keys :req-un [::_id ::index ::name ::size ::alignment ::armor_class ::hit_points ::hit_dice ::url]))
+(s/def ::combatant (s/keys :req-un [::_id ::index ::name ::size ::alignment ::armor_class ::hit_points ::hit_dice ::url ::initiative]))
 
 (defn conform
   [data]
