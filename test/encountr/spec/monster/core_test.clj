@@ -12,9 +12,9 @@
                                           :type "humanoid"
                                           :subtype "goblinoid"
                                           :alignment "chaotic evil"
-                                          :armor-class 16
-                                          :hit-points 27
-                                          :hit-dice "5d8"
+                                          :armor_class 16
+                                          :hit_points 27
+                                          :hit_dice "5d8"
                                           :speed "30 ft."
                                           :strength 15
                                           :dexterity 14
@@ -24,27 +24,27 @@
                                           :charisma 9
                                           :stealth 6
                                           :survival 2
-                                          :damage-vulnerabilities ""
-                                          :damage-resistances ""
-                                          :damage-immunities ""
+                                          :damage_vulnerabilities ""
+                                          :damage_resistances ""
+                                          :damage_immunities ""
                                           :condition_immunities ""
                                           :senses "darkvision 60 ft. passive Perception 10"
                                           :languages "Common Goblin"
                                           :challenge-rating 1
-                                          :special-abilities [{:attack_bonus 0
+                                          :special_abilities [{:attack_bonus 0
                                                                :desc "A melee weapon deals one extra die of its damage when the bugbear hits with it (included in the attack)."
                                                                :name "Brute"}
                                                               {:damage_dice "2d6"
                                                                :attack_bonus 0
                                                                :desc "If the bugbear surprises a creature and hits it with an attack during the first round of combat the target takes an extra 7 (2d6) damage from the attack."
                                                                :name "Surprise Attack"}]
-                                          :actions [{:damage-bonus 2
-                                                     :damage-dice "2d8"
-                                                     :attack-bonus 4
+                                          :actions [{:damage_bonus 2
+                                                     :damage_dice "2d8"
+                                                     :attack_bonus 4
                                                      :desc "Melee Weapon: Attack +4 to hit reach 5 ft. one target. Hit 11 (2d8 + 2) piercing damage."
                                                      :name "Morningstar"}
-                                                    {:damage-bonus 2
-                                                     :damage-dice "2d6"
+                                                    {:damage_bonus 2
+                                                     :damage_dice "2d6"
                                                      :attack-bonus 4
                                                      :desc "Melee or Ranged Weapon Attack: +4 to hit reach 5 ft. or range 30/120 ft. one target. Hit 9 (2d6 + 2) piercing damage in melee or 5 (1d6 + 2) piercing damage at range."
                                                      :name "Javelin"}]
