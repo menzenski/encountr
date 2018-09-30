@@ -30,7 +30,7 @@
                                           :condition_immunities ""
                                           :senses "darkvision 60 ft. passive Perception 10"
                                           :languages "Common Goblin"
-                                          :challenge-rating 1
+                                          :challenge_rating 1
                                           :special_abilities [{:attack_bonus 0
                                                                :desc "A melee weapon deals one extra die of its damage when the bugbear hits with it (included in the attack)."
                                                                :name "Brute"}
@@ -45,7 +45,7 @@
                                                      :name "Morningstar"}
                                                     {:damage_bonus 2
                                                      :damage_dice "2d6"
-                                                     :attack-bonus 4
+                                                     :attack_bonus 4
                                                      :desc "Melee or Ranged Weapon Attack: +4 to hit reach 5 ft. or range 30/120 ft. one target. Hit 9 (2d6 + 2) piercing damage in melee or 5 (1d6 + 2) piercing damage at range."
                                                      :name "Javelin"}]
                                           :url "http://www.dnd5eapi.co/api/monsters/57"}))))

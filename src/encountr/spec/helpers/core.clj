@@ -2,7 +2,8 @@
   (:require [clojure.spec.alpha :as s]
             [cemerick.url :as url]))
 
-(s/def ::dice-notation (s/and string? #(re-matches #"^\d+d\d+$" %)))
+(s/def ::dice-notation (s/and string?
+                              #(re-matches #"^\d+d\d+$" %)))
 
 (s/def ::size #{"Tiny" "Small" "Medium" "Large" "Huge" "Gargantuan"})
 
