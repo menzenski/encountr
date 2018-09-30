@@ -1,5 +1,5 @@
-(ns encountr.dice-test
-  (:require [encountr.dice :as dice]
+(ns encountr.tools.dice-test
+  (:require [encountr.tools.dice :as dice]
             [clojure.test :refer :all]
             [clojure.test.check.generators :as gen]
             [clojure.test.check.properties :as prop]

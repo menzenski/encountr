@@ -1,4 +1,4 @@
-(ns encountr.dice)
+(ns encountr.tools.dice)
 
 (defn- string->int
   [s]
