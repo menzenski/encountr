@@ -1,10 +1,8 @@
 (ns encountr.core
-  (:require [encountr.cli.core :as cli]))
+  (:require [carica.core :refer [config]]))
 
 (defn- main
-  "Generate a combat encounter from the provided options.
-
-  `lein run -- monster -k Bugbear -n Steve -c 2 monster -k Owlbear -r`"
-  [& args]
-  (apply cli/main args))
-
+  "Generate a combat encounter from a provided configuration file."
+  []
+  (let [encounter-config (config :encounter)]
+    (println (with-out-str (clojure.pprint/pprint encounter-config)))))

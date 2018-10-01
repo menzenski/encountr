@@ -1,0 +1,5 @@
+{:encounter {:roll-hit-points? true
+             :monsters [{:name "Bugbear"
+                         :number 2}]
+             :other-combatants [{:name "Droop"
+                                 :initiative 4}]}}
