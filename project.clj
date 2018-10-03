@@ -1,4 +1,4 @@
-(defproject encountr "0.1.0-SNAPSHOT"
+(defproject encountr "0.1.1-SNAPSHOT"
   :description "A tool for generating 5E combat encounters."
   :url "https://github.com/menzenski/encountr"
   :license {:name "Eclipse Public License"
