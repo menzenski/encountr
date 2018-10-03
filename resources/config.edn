@@ -2,4 +2,4 @@
              :monsters [{:name "Bugbear"
                          :number 2}]
              :other-combatants [{:name "Droop"
-                                 :initiative 4}]}}
+                                 :initiative-modifier 4}]}}
