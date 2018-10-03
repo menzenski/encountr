@@ -2,4 +2,6 @@
 
 (defn get-id
   [url]
-  (re-find "/(\d+)$" url))
+  (some->> url
+           (re-find #"/(\d+)$")
+           second))
