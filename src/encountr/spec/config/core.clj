@@ -11,10 +11,10 @@
 (s/def ::monsters (s/coll-of (s/keys :req-un [::name]
                                      :opt-un [::number])))
 
-(s/def ::initiative-modifier int?)
+(s/def ::initiative int?)
 
 (s/def ::other-combatants (s/coll-of (s/keys :req-un [::name]
-                                             :opt-un [::initiative-modifier])))
+                                             :opt-un [::initiative])))
 
 (s/def ::config (s/keys :req-un [::roll-hit-points? ::monsters]
                         :opt-un [::other-combatants]))
