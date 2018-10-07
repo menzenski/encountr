@@ -25,7 +25,7 @@
         initiative-order (->> monster-initiative-order
                               (concat other-combatant-initiative-order)
                               (reduce #(assoc %1 (:score %2) (into [] (concat (get %1 (:score %2)) [%2]))) initiative-base)
-                              (into (sorted-map)))]
+                              (into (sorted-map-by >)))]
     (doall
      (println (with-out-str (clojure.pprint/pprint initiative-order))))
     (println (with-out-str (clojure.pprint/pprint encounter-config)))))
