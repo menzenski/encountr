@@ -3,7 +3,7 @@
 
 (defn ability-modifier
   [score]
-  (-> score (- 10) (/ 2) math/floor int))
+  (some-> score (- 10) (/ 2) math/floor int))
 
 
 (defn ability-modifiers
