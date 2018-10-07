@@ -11,21 +11,25 @@
   []
   (let [initiative-base (reduce #(assoc %1 %2 []) {} (range -5 26))
         encounter-config (-> :encounter carica/config config-spec-builder/config*)
-        monster-initiative-order (some->> encounter-config
-                                          :monsters
-                                          (map (fn [{:keys [name] :as all}]
-                                                 (let [full-monster (client/get-by-name :monsters name)
-                                                       dex-modifier (some-> full-monster :dexterity ability-scores/ability-modifier)]
-                                                   (assoc full-monster :initiative dex-modifier))))
-                                          (map monster-spec-builder/monster*)
+        monsters (some->> encounter-config
+                          :monsters
+                          (map (fn [{:keys [name] :as all}]
+                                 (let [full-monster (client/get-by-name :monsters name)
+                                       dex-modifier (some-> full-monster :dexterity ability-scores/ability-modifier)]
+                                   (assoc full-monster :initiative dex-modifier))))
+                          (map monster-spec-builder/monster*))
+        monster-initiative-order (some->> monsters
                                           (map initiative/roll-initiative))
         other-combatant-initiative-order (some->> encounter-config
                                                   :other-combatants
                                                   (map initiative/roll-initiative))
         initiative-order (->> monster-initiative-order
                               (concat other-combatant-initiative-order)
-                              (reduce #(assoc %1 (:score %2) (into [] (sort (concat (get %1 (:score %2)) [(:label %2)])))) initiative-base)
+                              (reduce
+                               #(assoc %1 (:score %2) (into [] (sort (concat (get %1 (:score %2)) [(:label %2)]))))
+                               initiative-base)
                               (into (sorted-map-by >)))]
     (doall
-     (println (with-out-str (clojure.pprint/pprint initiative-order))))
-    (println (with-out-str (clojure.pprint/pprint encounter-config)))))
+     [(println (with-out-str (clojure.pprint/pprint (map (partial into (sorted-map)) monsters))))
+      (println (with-out-str (clojure.pprint/pprint initiative-order)))
+      (println (with-out-str (clojure.pprint/pprint encounter-config)))])))
