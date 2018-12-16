@@ -14,7 +14,13 @@
             :hit_dice "5d8"
             :challenge_rating 1
             :url "http://www.dnd5eapi.co/api/monsters/57"
-            :initiative 2}
+            :initiative 2
+            :strength-modifier nil
+            :dexterity-modifier nil
+            :constitution-modifier nil
+            :intelligence-modifier nil
+            :wisdom-modifier nil
+            :charisma-modifier nil}
            (monster-builder/monster :_id "123"
                                     :index 57
                                     :name "Bugbear"
